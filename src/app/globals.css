@@ -5,12 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --heading-color: #333333; /* Dark gray for headings in light mode */
+  --accent-color: #2a59c0; /* Blue for accents */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --heading-color: #ffffff; /* White for headings in dark mode */
+    --accent-color: #1E90FF; /* Lighter blue for dark mode */
   }
 }
 
@@ -20,6 +24,134 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Typography improvements */
+h1, h2, h3 {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+a {
+  color: var(--accent-color);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* Adding padding to sections for better spacing */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-container {
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+}
+.section-title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: currentColor;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* Project card styles with hover effects */
+.project-card {
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Skills styling */
+.skills-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-icon {
+  display: inline-block;
+  margin: 10px;
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+/* Contact form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background-color: var(--accent-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: var(--foreground);
+}
+
+/* Profile picture hover effect */
+.profile-picture {
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%;
+  }
+
+  .skills-category {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+/* Utility classes */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
