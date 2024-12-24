@@ -44,7 +44,7 @@ export default function AboutMe() {
   }, [charIndex, pointIndex]);
 
   return (
-    <section id="about" className="p-8">
+    <section id="about" className="p-8 text-center bg-black text-white">
       <motion.h2 
         className="text-3xl font-bold"
         initial={{ opacity: 0, y: -20 }} 
@@ -53,16 +53,30 @@ export default function AboutMe() {
       >
         About Me
       </motion.h2>
-      <Image 
-        src="/images/profile.jpg" // Ensure the image is located in the public directory
-        alt="Raja Phanendra Kumar Palacherla"
-        className="mt-4 rounded-full w-32 h-32 object-cover filter grayscale hover:filter-none transition-all duration-300"
-        width={128} 
-        height={128} 
-        priority
-      />
+
+      {/* Name Section */}
+      <motion.h3
+        className="text-xl font-semibold mt-4 text-gray-300"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Raja Phanendra Kumar Palacherla
+      </motion.h3>
+
+      <div className="flex justify-center mt-6">
+        <Image 
+          src="/images/profile.jpg" // Ensure the image is located in the public directory
+          alt="Raja Phanendra Kumar Palacherla"
+          className="rounded-full w-40 h-40 md:w-48 md:h-48 border-4 border-gray-600 shadow-lg object-cover object-top hover:scale-105 transition-transform duration-300"
+          width={192} 
+          height={192} 
+          priority
+        />
+      </div>
+      
       <motion.pre 
-        className="mt-4 text-green-500 font-mono whitespace-pre-wrap"
+        className="mt-6 text-green-500 font-mono whitespace-pre-wrap text-lg max-w-3xl mx-auto"
         initial={{ opacity: 0, y: -20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.5, delay: 0.4 }}

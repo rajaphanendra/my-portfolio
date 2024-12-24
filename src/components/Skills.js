@@ -45,7 +45,7 @@ export default function Skills() {
         {skillsData.map((skill, index) => (
           <motion.div 
             key={skill.name} 
-            className="border rounded p-4 text-center hover:shadow-lg transition-shadow duration-300"
+            className="border text-white rounded p-4 text-center hover:shadow-lg transition-shadow duration-300"
             initial={{ opacity: 0, scale: 0.8 }} 
             animate={{ opacity: 1, scale: 1 }} 
             transition={{ duration: 0.3, delay: index * 0.1 }}

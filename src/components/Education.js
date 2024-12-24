@@ -4,8 +4,8 @@
 import { motion } from 'framer-motion';
 
 const educationData = [
-  { degree: "Master of Science in Computer Science", institution: "University of Central Missouri", duration: "2022 - 2024" },
-  { degree: "Bachelor of Technology in Computer Science and Engineering", institution: "K L University", duration: "2018 - 2022" },
+  { degree: "Master of Science in Computer Science", institution: "University of Central Missouri", duration: "August 2022 - May 2024" },
+  { degree: "Bachelor of Technology in Computer Science and Engineering", institution: "K L University", duration: "July 2018 - April 2022" },
 ];
 
 export default function Education() {

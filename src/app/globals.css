@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --heading-color: #333333; /* Dark gray for headings in light mode */
+  --background: #1a202c;
+  --foreground: #e2e8f0;
+  --heading-color: #e2e8f0; /* Dark gray for headings in light mode */
   --accent-color: #2a59c0; /* Blue for accents */
 }
 
@@ -54,7 +54,7 @@ section {
   text-align: center;
 }
 
-.blinking-cursor {
+/* .blinking-cursor {
   display: inline-block;
   width: 10px;
   background-color: currentColor;
@@ -65,6 +65,16 @@ section {
   50% {
     opacity: 0;
   }
+} */
+ 
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 }
 
 

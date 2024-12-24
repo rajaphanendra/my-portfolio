@@ -120,8 +120,8 @@ export default function Home() {
       <Skills />
       <Experience />
       <Education />
-      <Contact />
       <Honors />
+      <Contact />
     </Layout>
   );
 }

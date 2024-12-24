@@ -6,6 +6,10 @@ import { motion } from 'framer-motion';
 const honorsData = [
   "Azure Developer Associate",
   "Aviatrix Certified Engineer",
+  "Smart India Hackthon (SIH) National Finalist",
+  "Secured Second Prize in the internal SIH competition for developing SvasthayaBot, an AI-based healthcare chatbot",
+  `Collaborated on a DST-funded research project Precision Agriculture in Guntur, India, developing a mobile app using Flutter and Firebase, which improved 
+  red chili yields by more than 60%`,
 ];
 
 export default function Honors() {

@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 
 const experienceData = [
-  // { title: "Software Developer Intern", company: "Swecha AP", duration: "May 2021 - June 2022" },
+  { title: "Software Developer", company: "Swecha AP", duration: "May 2021 - June 2022" },
   { title: "Web Application Pentester Intern", company: "Indian Servers", duration: "March 2020 - May 2020" },
 ];
 
