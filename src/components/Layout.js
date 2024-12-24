@@ -18,7 +18,7 @@ export default function Layout({ children }) {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sections]);
 
   return (
     <>

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image"; // Import Image from next/image
 
 export default function ProjectMediaCarousel({ media }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -36,10 +37,13 @@ export default function ProjectMediaCarousel({ media }) {
 
   return (
     <div className="relative">
-      <img
+      <Image
         src={media[currentImageIndex]}
         alt={`Project Media ${currentImageIndex + 1}`}
-        className="rounded-md w-full mb-6"
+        className="rounded-md w-full max-w-full mb-6" 
+        layout="intrinsic"   // This makes the image responsive
+        width={1200}           // Aspect ratio width
+        height={800}           // Aspect ratio height
       />
       {media.length > 1 && (
         <>
