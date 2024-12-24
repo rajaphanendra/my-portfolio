@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 export default function Layout({ children }) {
-  const sections = ["about", "projects", "skills", "experience", "contact"]; // Match these exactly with the section ids
+  const sections = useMemo(() => ["about", "projects", "skills", "experience", "contact"], []); // Match these exactly with the section ids
   const [activeSection, setActiveSection] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

@@ -1,21 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image"; // Import Image from next/image
 
 export default function ProjectMediaCarousel({ media }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  if (!media || media.length === 0) {
-    return (
-      <div className="flex items-center justify-center bg-gray-700 h-64 rounded-md">
-        <p className="text-gray-400">No image available</p>
-      </div>
-    );
-  }
-
-  const nextImage = () => {
+ // Memoize nextImage function to avoid unnecessary re-creations
+  const nextImage = useCallback(() => {
     setCurrentImageIndex((prev) => (prev + 1) % media.length);
-  };
+  }, [media.length]);
 
   const prevImage = () => {
     setCurrentImageIndex((prev) =>
@@ -25,7 +18,7 @@ export default function ProjectMediaCarousel({ media }) {
 
   // Auto-scroll functionality
   useEffect(() => {
-    if (media.length > 1) {
+    if (media && media.length > 1) {
       const autoScroll = setInterval(() => {
         nextImage();
       }, 3000); // Change image every 3 seconds
@@ -33,7 +26,15 @@ export default function ProjectMediaCarousel({ media }) {
       // Cleanup interval on unmount
       return () => clearInterval(autoScroll);
     }
-  }, [media.length]); // Re-run if media changes
+  }, [nextImage, media]); // Re-run if media changes
+
+  if (!media || media.length === 0) {
+    return (
+      <div className="flex items-center justify-center bg-gray-700 h-64 rounded-md">
+        <p className="text-gray-400">No image available</p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative">
